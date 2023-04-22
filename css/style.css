@@ -993,7 +993,7 @@
 
 .u-section-5 .u-image-2 {
   min-height: 494px;
-  background-image: url("../images/13.jpg");
+  background-image: url("../images/13.png");
   background-position: 50% 50%;
 }
 
@@ -1170,4 +1170,70 @@
     margin-left: 6px;
     margin-right: 6px;
   }
+}
+
+
+/*** music box ***/
+.music-box {
+  position: fixed;
+  width: 300px;
+  height: 160px;
+  z-index: 120;
+  bottom: 30px;
+  right: 30px;
+}
+
+@media (max-width: 991px) {
+  .music-box {
+    width: 250px;
+    height: 120px;
+    right: auto;
+    left: 30px;
+  }
+}
+
+.music-box button {
+  background: rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 50px;
+  line-height: 35px;
+  font-size: 18px;
+  color: #9a8c40;
+  border: 1px solid #e6e6e6;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.music-box button.map {
+  right: 60px;
+}
+.music-box.music-box-2 button {
+    color: #00b4d8 ;
+}
+@media (max-width: 991px) {
+  .music-box button {
+    right: auto;
+    left: 0;
+  }
+  .music-box button.map {
+    bottom: 55px;
+  }
+}
+
+.music-box .toggle-music-box {
+  top: -50px;
+  visibility: visible;
+  opacity: 1;
+}
+
+ul {
+  list-style-type: none;
 }
