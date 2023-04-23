@@ -145,24 +145,32 @@ function updateLanguage(lang) {
         }
     }
 
+    $(window).on('load', function() {
+        hidePreloading();
+    });
+
+    /*================================
+    Preloader
+    ==================================*/
+    /*------------------------------------------
+        = HIDE PRELOADER
+    -------------------------------------------*/
+    function hidePreloading() {
+        if($('.pre-loading').length) {
+            $('.pre-loading').delay(100).fadeOut(500, function() {
+            });
+        }
+    }
+
     $('form').submit(function(e) {
         e.preventDefault();
     });
    
     if ($("#rsvp-form").length) {
+        
         const localStorage = window.localStorage;
         const currentLanguage = localStorage.getItem('lang') || LANG_VI;
         var index = 0;
-        /*
-        if (currentLanguage == LANG_VI)
-        {
-            index = 0;
-        }
-        else
-        {
-            index = 1;
-        }
-        */
         let translations = {
             'ml-name-error': ['Bạn chưa nhập họ và tên.','名前を入力してください。'],
             'ml-quest-error': ['Bạn chưa chọn số lượng tham gia cùng.','一緒に参加する人数を選択してください。'],
@@ -187,6 +195,7 @@ function updateLanguage(lang) {
                     required: true
                 }
 
+
             },
             
             
@@ -196,19 +205,20 @@ function updateLanguage(lang) {
             },
 
             submitHandler: function (form) {
-                if ($("#loading").css("display") === "inline-block") return 0;
+                console.log('submitHandler 4');
+                if ($("#process-loading").css("display") === "inline-block") return 0;
                 var params = $(form).serialize();
                 
-                $("#loading").css("display", "inline-block");
+                $("#process-loading").css("display", "inline-block");
                 $.ajax({
                     type: "GET",
-                    url: "https://script.google.com/macros/s/AKfycbzZvgzIGf76I2P8UMBCzTc0N3ypC_7eFabQgY-78pnQrevaruoi-9gEfxguIm0iCYD4BA/exec",
+                    url: "http://script.google.com/macros/s/AKfycbziPSWd6KxUahVDRmRJoPTN_mlUzh4_lMZLqy80XL-GrNlKltP6EYTDeujD898iRbY/exec",
                     data: params,
                     success: function () {
                         $( "#loading").hide();
-                        $( "#ml-success").slideDown( "slow" );
+                        $( "#success").slideDown( "slow" );
                         setTimeout(function() {
-                        $( "#ml-success").slideUp( "slow" );
+                        $( "#success").slideUp( "slow" );
                         }, 5000);
                         form.reset();
                     },
@@ -219,10 +229,10 @@ function updateLanguage(lang) {
                         $( "#ml-error").slideUp( "slow" );
                         }, 5000);
                         */
-                        $( "#loading").hide();
-                        $( "#ml-success").slideDown( "slow" );
+                        $( "#process-loading").hide();
+                        $( "#success").slideDown( "slow" );
                         setTimeout(function() {
-                        $( "#ml-success").slideUp( "slow" );
+                        $( "#success").slideUp( "slow" );
                         }, 5000);
                         form.reset();
                     }

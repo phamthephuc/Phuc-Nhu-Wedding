@@ -1216,7 +1216,7 @@
   right: 60px;
 }
 .music-box.music-box-2 button {
-    color: #00b4d8 ;
+    color: black ;
 }
 @media (max-width: 991px) {
   .music-box button {
@@ -1237,3 +1237,158 @@
 ul {
   list-style-type: none;
 }
+
+.validate-rsvp-form .success-error-message {
+  padding-left: 10px;
+  width: 100%;
+  margin: 15px 0 0;
+}
+
+.validate-rsvp-form label.error {
+  color: red;
+  margin: 5px 0 0 0;
+}
+
+.validate-rsvp-form #loader {
+  display: none;
+}
+
+.validate-rsvp-form #loader i {
+  font-size: 20px;
+  color: #00b4d8 ;
+}
+
+.validate-rsvp-form #success,
+.validate-rsvp-form #error {
+  border-radius: 10px;
+  width: 100%;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 16px;
+  text-align: center;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .validate-rsvp-form #success,
+  .validate-rsvp-form #error {
+    font-size: 15px;
+  }
+}
+
+.validate-rsvp-form #success {
+  background-color: #88B19C ;
+  margin-bottom: 5px;
+}
+
+.validate-rsvp-form #error {
+  background-color: red;
+}
+
+/*** show loading ***/
+
+.pre-loading {
+    z-index: 1000;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation-name: backdiv;
+    animation-duration: 1s; 
+    animation-iteration-count: infinite;
+  }
+
+.heart {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #88B19C;
+  height: 50px;
+  width: 50px;
+  transform: rotate(-45deg);
+  animation-name: beat;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.heart:after {
+  background-color: #88B19C;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  left: 25px;
+}
+.heart:before {
+  background-color: #88B19C;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 0px;
+}
+
+@keyframes backdiv {
+  50% {
+    background: #c3ded0;
+  }
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(0.6) rotate(-45deg);
+  }
+}
+
+
+.process-loading {
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-shadow: 24px 0 0 0 #88B19C,
+      18px 18px 0 0 #88B19C,
+      0px 24px 0 0 #88B19C,
+      -18px 18px 0 0 #88B19C,
+      -24px 0 0 0 #88B19C,
+      -18px -18px 0 0 #88B19C,
+      0px -24px 0 0 #88B19C,
+      18px -18px 0 0 #88B19C;
+  animation: spinner 1.5s infinite linear;
+}
+
+@keyframes spinner{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+
+

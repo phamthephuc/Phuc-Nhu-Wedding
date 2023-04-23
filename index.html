@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/style.css" media="screen">
   <script class="u-script" type="text/javascript" src="js/jquery-1.9.1.min.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="js/main.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="js/remove-listener-form.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="js/validation.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="js/custom.js" defer=""></script>
   <meta name="referrer" content="origin">
@@ -25,6 +26,12 @@
 </head>
 
 <body class="u-body u-xl-mode" data-lang="en">
+  <div class="pre-loading">
+    <div class="heart"></div>
+  </div>
+  <div class="process-loading" id="process-loading">
+    <div class="spinner"> </div>
+  </div>
   <header class="u-clearfix u-header u-palette-3-base u-header" id="sec-c043">
     <div class="u-clearfix u-sheet u-sheet-1">
       <a href="" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40">
@@ -206,9 +213,9 @@
       <div class="u-palette-3-light-2 u-shape u-shape-circle u-shape-2"></div>
       <div class="u-align-left u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-radius-15 u-shape-round u-white u-group-1">
         <div class="u-container-layout u-valign-middle u-container-layout-1">
-          <h2 class="u-text u-text-1">Bạn sẽ tham gia cùng chúng mình chứ</h2>
+          <h2 class="u-text u-text-1" style="padding-left: 10px">Bạn sẽ tham gia cùng chúng mình chứ???</h2>
           <div class="u-form u-form-1">
-            <form action="" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" id="rsvp-form" name="rsvp-form" style="padding: 10px;">
+            <form action="submitHandler()" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form validate-rsvp-form" source="email" id="rsvp-form" name="rsvp-form" style="padding: 10px;">
               <div class="u-form-group u-form-name">
                 <label for="name-a736" class="u-label">Họ và tên của bạn *</label>
                 <input type="text" placeholder="Enter your Name" id="name-a736" name="name" class="u-grey-5 u-input u-input-rectangle u-radius-12" required="">
@@ -228,16 +235,20 @@
               </div>
               <div class="u-form-group u-form-message">
                 <label for="message-a736" class="u-label">Lời nhắn</label>
-                <textarea placeholder="Enter your message" rows="4" cols="50" id="message-a736" name="message" class="u-grey-5 u-input u-input-rectangle u-radius-12" required=""></textarea>
+                <textarea placeholder="Enter your message" rows="4" cols="50" id="message-a736" name="message" class="u-grey-5 u-input u-input-rectangle u-radius-12"></textarea>
               </div>
               <div class="u-align-left u-form-group u-form-submit">
                 <a href="#" class="u-active-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-black u-palette-3-base u-radius-12 u-btn-1">Gửi đi</a>
                 <input type="submit" value="submit" class="u-form-control-hidden">
               </div>
-              <div class="u-form-send-message u-form-send-success"> Cảm ơn bạn! Thông tin đã được gửi đi thành công</div>
-              <div class="u-form-send-error u-form-send-message"> Không thể gửi thông tin đi. Vui lòng kiểm trả lại</div>
+              <div class="col col-md-12 success-error-message">
+                <div id="success">Cảm ơn bạn vì đã tham gia cùng tụi mình!</div>
+                <div id="error">Đã có lỗi trong quá trình xử lý. Xin thử lại. </div>
+              </div>
+              <!--
               <input type="hidden" value="" name="recaptchaResponse">
               <input type="hidden" name="formServices" value="5a7a785497421fb1a632e66bc170cfe0">
+              -->
             </form>
           </div>
         </div>
