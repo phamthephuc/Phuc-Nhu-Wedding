@@ -212,7 +212,7 @@ function updateLanguage(lang) {
                 $("#process-loading").css("display", "inline-block");
                 $.ajax({
                     type: "GET",
-                    url: "http://script.google.com/macros/s/AKfycbziPSWd6KxUahVDRmRJoPTN_mlUzh4_lMZLqy80XL-GrNlKltP6EYTDeujD898iRbY/exec",
+                    url: "https://script.google.com/macros/s/AKfycbziPSWd6KxUahVDRmRJoPTN_mlUzh4_lMZLqy80XL-GrNlKltP6EYTDeujD898iRbY/exec",
                     data: params,
                     success: function () {
                         $( "#loading").hide();
