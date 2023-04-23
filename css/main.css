@@ -1007,6 +1007,7 @@ a {
 
 .u-form-horizontal .u-form-group:not(.u-label-top) label,
 .u-form-horizontal .u-form-group:not(.u-label-top) input,
+.u-form-horizontal .u-form-group:not(.u-label-top) select,
 .u-form-horizontal .u-form-select-wrapper,
 .u-form-horizontal .u-form-radio-button-wrapper {
   display: flex;

@@ -222,7 +222,8 @@ function updateLanguage(lang) {
                         }, 5000);
                         form.reset();
                     },
-                    error: function() {
+                    error: function(e) {
+                        console.log("Error", e);
                         /*$( "#loading").hide();
                         $( "#ml-error").slideDown( "slow" );
                         setTimeout(function() {
