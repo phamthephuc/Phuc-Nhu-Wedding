@@ -223,7 +223,6 @@ function updateLanguage(lang) {
                         form.reset();
                     },
                     error: function(e) {
-                        console.log("Error", e);
                         /*$( "#loading").hide();
                         $( "#ml-error").slideDown( "slow" );
                         setTimeout(function() {
